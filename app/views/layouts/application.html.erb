@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simpleblog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap@4.0/dist/css/bootstrap.min.css" %>
+  </head>
+
+  <body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">World's Best Blog <span>🔥</span></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <span class="p-2 text-dark"><%= link_to "Home", home_path %></span>
+        <span class="p-2 text-dark"><%= link_to "About", about_path %></span>
+      </nav>
+      <span class="btn btn-outline-primary"><%= link_to "Create Post", new_post_path %></span>
+    </div>
+
+    <div class="container mt-3">
+      <%= yield  %> <%# Views that we create will be rendered here%>
+    </div>
+  
+  <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"%>
+  </body>
+</html>

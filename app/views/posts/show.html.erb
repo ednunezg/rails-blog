@@ -1,0 +1,21 @@
+<h2> Blog Post: <%= @post.title %></h2>
+<p> <%= @post.body %>
+
+<div class="mt-5">
+
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-outline-primary' %>
+<%=
+    link_to "Delete",
+    post_path(@post),
+    data: {confirm: 'Are you sure?'},
+    method: :delete,
+    :class => 'btn btn-outline-danger'
+%>
+
+<hr/>
+<h4 class="mt-4">Comments section</h4>
+<%= render 'comments/comments' %>
+
+<hr/>
+<h4 class="mt-4">Add Comment</h4>
+<%= render 'comments/form' %>  <%#  NOTICE HOW WE CAN MAKE MODULAR ERBs USING PARTIALS %>
